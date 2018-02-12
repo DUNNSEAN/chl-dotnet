@@ -10,7 +10,7 @@ namespace BookStore.Models
 		: DbContext
 	{
 		public DatabaseContext()
-			: base(@"Data Source=(localdb)v11.0;Initial Catalog=BookShop;Integrated Security=True;MultipleActiveResultSets=True")
+			: base(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=BookStore;Integrated Security=True;MultipleActiveResultSets=True")
 		{
 		}
 
