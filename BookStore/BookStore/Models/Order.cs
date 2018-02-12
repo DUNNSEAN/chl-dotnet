@@ -14,7 +14,7 @@ namespace BookStore.Models
 
 		[Required]
 		[ScaffoldColumn(false)]
-		public decimal Price => OrderLines.Sum(ol => ol.Price);
+		public decimal Price { get; set; }
 		[ScaffoldColumn(false)]
 		public string Status { get; set; }
 

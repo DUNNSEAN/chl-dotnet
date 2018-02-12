@@ -94,3 +94,9 @@ C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\obj\Debug\BookStore.
 C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\obj\Debug\BookStore.csproj.CoreCompileInputs.cache
 C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\obj\Debug\BookStore.dll
 C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\obj\Debug\BookStore.pdb
+C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\bin\System.Net.Http.Formatting.dll
+C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\bin\System.Web.Http.dll
+C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\bin\System.Web.Http.WebHost.dll
+C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\bin\System.Net.Http.Formatting.xml
+C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\bin\System.Web.Http.xml
+C:\Users\dunni\source\repos\chl-dotnet2\BookStore\BookStore\bin\System.Web.Http.WebHost.xml
