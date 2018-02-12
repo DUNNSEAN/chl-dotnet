@@ -1,0 +1,30 @@
+﻿@model BookStore.Models.Order
+
+@{
+    ViewBag.Title = "AddressAndPayment";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+
+	<h2>Addres And Payment</h2>
+	<fieldset>
+		<legend>Shipping Information</legend>
+		@Html.EditorForModel()
+	</fieldset>
+	<fieldset>
+		<legend>Payment</legend>
+		<p>We're running a promotion: all books are free with the promo code: "FREE"</p>
+		<div class="glyphicon-edit">
+			@Html.Label("Promo Code")
+		</div>
+		<div class="glyphicon-edit">
+			@Html.TextBox("PromoCode")
+		</div>
+	</fieldset>
+
+	<input type="submit" value="Submit Order"/>
+}
+

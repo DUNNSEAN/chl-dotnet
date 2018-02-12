@@ -103,5 +103,35 @@ namespace BookStore.Controllers
 			[Range(0, 10)]
 			public int Quantity { get; set; }
 		}
+
+		public int CreateOrder(Order order)
+		{
+			decimal orderTotal = 0;
+
+			var cartItems = GetShoppingCart().Lines;
+
+			foreach (var item in cartItems)
+			{
+				var orderLines = new OrderLine
+				{
+					BookId = item.BookId,
+					OrderId = order.Id,
+					Quantity = item.Quantity
+				};
+				// Set the order total of the shopping cart
+				orderTotal += (item.Quantity * item.Price);
+
+				using (var db = new DatabaseContext())
+				{
+					db.OrderLines.Add(orderLines);
+				}
+			}
+
+			using (var db = new DatabaseContext())
+			{
+				db.SaveChanges();				
+			}
+			return order.Id;
+		}
     }
 }
