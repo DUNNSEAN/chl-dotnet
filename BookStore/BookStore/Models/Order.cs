@@ -28,6 +28,8 @@ namespace BookStore.Models
 		public string Country { get; set; }
 		public string Phone { get; set; }
 		public string Email { get; set; }
+		public string Title { get; set; }
+		public string Author { get; set; }
 
 		[ScaffoldColumn(false)]
 		public System.DateTime OrderDate { get; set; }
