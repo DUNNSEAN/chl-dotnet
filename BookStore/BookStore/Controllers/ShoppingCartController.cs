@@ -34,18 +34,23 @@ namespace BookStore.Controllers
 				{
 					var book = db.Books.First(b => b.Id == bookId);
 
-					var newOrderLine = new OrderLine
+					var orderLine = new OrderLine
 					{
 						Book = book,
 						Quantity = 1
 					};
 
-					shoppingCart.AddLineItem(newOrderLine);
+					shoppingCart.AddLineItem(orderLine);
 				}
 
 				ViewData.Model = shoppingCart;
 				return RedirectToAction(nameof(Index));
 			}
+		}
+
+		private decimal GetPrice(OrderLine order)
+		{
+			return order.Price;
 		}
 
 		[HttpGet]
@@ -110,28 +115,36 @@ namespace BookStore.Controllers
 
 			var cartItems = GetShoppingCart().Lines;
 
+			var orderLines = new OrderLine();
+
 			foreach (var item in cartItems)
 			{
-				var orderLines = new OrderLine
+				orderLines = new OrderLine
 				{
 					BookId = item.BookId,
 					OrderId = order.Id,
 					Quantity = item.Quantity
 				};
 				// Set the order total of the shopping cart
-				orderTotal += (item.Quantity * item.Price);
+				orderTotal = GetPrice(orderLines);
 
 				using (var db = new DatabaseContext())
 				{
 					db.OrderLines.Add(orderLines);
 				}
 			}
+			order.Price = orderTotal;
 
 			using (var db = new DatabaseContext())
 			{
 				db.SaveChanges();				
 			}
 			return order.Id;
+		}
+
+		public decimal GetOrderPrice(Order order)
+		{
+			return order.Price;
 		}
     }
 }
