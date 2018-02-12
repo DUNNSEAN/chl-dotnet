@@ -23,7 +23,7 @@
 			@foreach (var book in Model)
 			{
 				<tr>
-					<td><h4>@Html.ActionLink((string)book.Title, "Details", "Catalog", new { id = book.Id }, new { }) "</h4></td>
+					<td><h4>@Html.ActionLink((string)book.Title, "Details", "Catalog", new { title = (string)book.Title }, new { })</h4></td>
 					<td>@book.Author</td>
 					<td>@book.Price.ToString("0.00")</td>
 					<td>@Html.ActionLink("Add to cart", "Add", "ShoppingCart", new { bookId = book.Id }, new { @class = "btn btn-primary" })</td>

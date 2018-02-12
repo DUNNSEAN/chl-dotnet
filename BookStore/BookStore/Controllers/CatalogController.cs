@@ -30,11 +30,11 @@ namespace BookStore.Controllers
 			}
 		}
 
-        public ActionResult Details(int id)
+        public ActionResult Details(string title)
         {
 			using (var db = new DatabaseContext())
 			{
-				var book = db.Books.First(b => b.Id == id);
+				var book = db.Books.First(b => b.Title == title);
 				return View(book);
 			}
         }
